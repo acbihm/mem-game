@@ -9,65 +9,67 @@ import data from "../../data.json";
 class Game extends Component {
     state = {
         data,
-        correctNum: 0,
+        score: 0,
         topScore: 0
     };
 
     componentDidMount() {
-        this.setState({ data: this.shuffleData(this.state.data) });
+        this.setState({ data: this.mixColors(this.state.data) });
     }
 
-    handleCorrectGuess = newData => {
-        const { topScore, correctNum } = this.state;
-        const newScore = correctNum + 1;
+    correctPick = newData => {
+        const { topScore, score } = this.state;
+        const newScore = score + 1;
         const newTopScore = Math.max(newScore, topScore);
 
         this.setState({
-            data: this.shuffleData(newData),
-            correctNum: newScore,
+            data: this.mixColors(newData),
+            score: newScore,
             topScore: newTopScore
         });
+        if (this.newScore === 20){
+            alert("You WON!")
+        }
     };
 
-    handleIncorrectGuess = data => {
+    wrongPick = data => {
         this.setState({
             data: this.resetData(data),
-            correctNum: 0
+            score: 0
         });
     };
 
     resetData = data => {
         const resetData = data.map(item => ({ ...item, clicked: false }));
-        return this.shuffleData(resetData);
+        return this.mixColors(resetData);
     };
 
-    shuffleData = data => {
+
+    mixColors = data => {
         let i = data.length - 1;
         while (i > 0) {
-            const j = Math.floor(Math.random() * (i + 1));
+            const randomNum = Math.floor(Math.random() * (i + 1));
             const temp = data[i];
-            data[i] = data[j];
-            data[j] = temp;
+            data[i] = data[randomNum];
+            data[randomNum] = temp;
             i--;
         }
         return data;
     };
 
-    handleItemClick = id => {
-        let guessedCorrectly = false;
+    colorPick = id => {
+        let correct = false;
         const newData = this.state.data.map(item => {
             const newItem = { ...item };
             if (newItem.id === id) {
                 if (!newItem.clicked) {
                     newItem.clicked = true;
-                    guessedCorrectly = true;
+                    correct = true;
                 }
             }
             return newItem;
         });
-        guessedCorrectly
-            ? this.handleCorrectGuess(newData)
-            : this.handleIncorrectGuess(newData);
+        correct ? this.correctPick(newData): this.wrongPick(newData);
     };
 
     render() {
@@ -82,7 +84,7 @@ class Game extends Component {
                             key={item.id}
                             id={item.id}
                             shake={!this.state.score && this.state.topScore}
-                            handleClick={this.handleItemClick}
+                            handleClick={this.colorPick}
                             image={item.image}
                         />
                     ))}</Wrapper>

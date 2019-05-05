@@ -1,23 +1,21 @@
 import React, {Component} from "react";
 import "./style.css";
-class Score extends Component {
+class ScoreCount extends Component {
     state = {
         scoreNum: "",
         shake: false
     };
 
-    componentDidUpdate({ correctNum, topScore }, prevState) {
+    componentDidUpdate({ score, topScore }, prevState) {
         const newState = { shake: true };
-
-        if (correctNum === 0 && topScore === 0) {
+        if (score === 0 && topScore === 0) {
             newState.scoreNum = "";
-        } else if (correctNum === 0 && topScore > 0) {
+        } else if (score === 0 && topScore > 0) {
             newState.scoreNum = "incorrect";
         } else {
             newState.scoreNum = "correct";
         }
-
-        if (correctNum !== this.props.score || this.state.scoreNum !== newState.scoreNum) {
+        if (score !== this.props.score || this.state.scoreNum !== newState.scoreNum) {
             this.setState(newState);
         }
     }
@@ -37,12 +35,11 @@ class Score extends Component {
         return (
             <li
                 className={this.state.shake ? this.state.scoreNum : ""}
-                onAnimationEnd={() => this.setState({ shake: false })}
-            >
+                onAnimationEnd={() => this.setState({ shake: false })}>
                 {this.correctOrWrongMessage()}
             </li>
         );
     }
 }
 
-export default Score;
+export default ScoreCount;

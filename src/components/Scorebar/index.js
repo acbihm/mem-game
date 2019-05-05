@@ -1,5 +1,5 @@
 import React from "react";
-import Score from "../Score";
+import ScoreCount from "../ScoreCount";
 import "./style.css";
 
 function Scorebar(props) {
@@ -9,7 +9,7 @@ function Scorebar(props) {
                 <li>
                     <a href="/">Memory Game</a>
                 </li>
-                <Score score={props.score} topScore={props.topScore} />
+                <ScoreCount score={props.score} topScore={props.topScore} />
                 <li>
                     Score: {props.score}  |   Top Score: {props.topScore}
                 </li>
