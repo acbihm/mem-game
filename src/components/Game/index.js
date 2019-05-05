@@ -22,12 +22,11 @@ class Game extends Component {
     render() {
         return (
             <div>
-                <Scorebar />
-                <Header />
                 <Wrapper>
-
+                    <Scorebar />
+                    <Header />
+                    <Footer />
                 </Wrapper>
-                <Footer />
             </div>
         );
     }
