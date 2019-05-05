@@ -73,10 +73,10 @@ class Game extends Component {
     render() {
         return (
             <div>
-            <Wrapper>
+            
                 <Scorebar score={this.state.score} topScore={this.state.topScore} />
                 <Header />
-                
+                <Wrapper>
                     {this.state.data.map(item => (
                         <Image
                             key={item.id}
@@ -85,9 +85,9 @@ class Game extends Component {
                             handleClick={this.handleItemClick}
                             image={item.image}
                         />
-                    ))}
+                    ))}</Wrapper>
                     <Footer />
-                </Wrapper>
+                
                 
             </div>
         );

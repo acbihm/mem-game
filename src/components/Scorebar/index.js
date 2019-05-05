@@ -2,8 +2,6 @@ import React from "react";
 import Score from "../Score";
 import "./style.css";
 
-// Component for the Navbar
-
 function Scorebar(props) {
     return (
         <nav className="bar">

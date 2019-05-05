@@ -79,4 +79,33 @@
         "image": "/assets/img/16.png",
         "clicked": false
     }
+    ,
+    {
+        "id": 17,
+        "image": "/assets/img/17.png",
+        "clicked": false
+    }
+    ,
+    {
+        "id": 18,
+        "image": "/assets/img/18.png",
+        "clicked": false
+    }
+    ,
+    {
+        "id": 19,
+        "image": "/assets/img/19.png",
+        "clicked": false
+    }
+    ,
+    {
+        "id": 20,
+        "image": "/assets/img/20.png",
+        "clicked": false
+    },
+    {
+        "id": 21,
+        "image": "/assets/img/21.png",
+        "clicked": false
+    }
 ]
