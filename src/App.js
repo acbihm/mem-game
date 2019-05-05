@@ -1,8 +1,18 @@
 import React from "react";
-import Wrapper from "./components/Wrapper";
+// import Game from "./components/Game";
+import Header from "./components/Header"
+import Footer from "./components/Footer";
+import Wrapper from "./components/Wrapper"
 
 function App() {
-  return <Wrapper />;
+  return (
+    <div>
+    <Wrapper>
+      <Header />
+      <Footer />
+      </Wrapper>
+    </div>
+  );
 }
 
 export default App;

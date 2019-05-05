@@ -1,0 +1,25 @@
+
+.header {
+    min-height: 30px;
+    padding: 20px; 
+    padding-bottom: 60px;
+    background-color: black;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 4rem;
+  }
+  
+  #colors {
+    background: red;
+    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet);
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet);
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
