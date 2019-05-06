@@ -83,7 +83,6 @@ class Game extends Component {
                         <Image
                             key={item.id}
                             id={item.id}
-                            shake={!this.state.score && this.state.topScore}
                             handleClick={this.colorPick}
                             image={item.image}
                         />

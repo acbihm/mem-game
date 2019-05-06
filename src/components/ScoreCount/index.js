@@ -3,12 +3,12 @@ import "./style.css";
 class ScoreCount extends Component {
     state = {
         scoreNum: "",
-        shake: false
     };
 
     componentDidUpdate({ score, topScore }, prevState) {
-        const newState = { shake: true };
+        const newState = { scoreNum: "" };
         if (score === 0 && topScore === 0) {
+            
             newState.scoreNum = "";
         } else if (score === 0 && topScore > 0) {
             newState.scoreNum = "incorrect";
@@ -33,9 +33,7 @@ class ScoreCount extends Component {
 
     render() {
         return (
-            <li
-                className={this.state.shake ? this.state.scoreNum : ""}
-                onAnimationEnd={() => this.setState({ shake: false })}>
+            <li>
                 {this.correctOrWrongMessage()}
             </li>
         );
