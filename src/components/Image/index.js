@@ -4,7 +4,7 @@ import "./style.css";
 function Image(props) {
     return (
         <div
-            onClick={() => props.handleClick(props.id)}
+            onClick={() => props.clicked(props.id)}
             style={{ backgroundImage: `url("${props.image}")` }}
             className={'img-block'}
         />

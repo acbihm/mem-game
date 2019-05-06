@@ -83,7 +83,7 @@ class Game extends Component {
                         <Image
                             key={item.id}
                             id={item.id}
-                            handleClick={this.colorPick}
+                            clicked={this.colorPick}
                             image={item.image}
                         />
                     ))}</Wrapper>

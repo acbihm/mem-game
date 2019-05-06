@@ -24,7 +24,7 @@ class ScoreCount extends Component {
             case "correct":
                 return "GOOD, KEEP GOING!";
             case "incorrect":
-                return "WRONG! CLICK A COLOR TO START OVER!";
+                return "WRONG! START OVER!";
             default:
                 return "Click a color block to start!";
         }
