@@ -1,16 +1,14 @@
 .img-block {
-    background-size: cover;
-    background-position: center;
+
     height: 100px;
     width: 100px;
     margin: 7px 22px;
     border: 10px solid black;
-    /* border-radius: 50%; */
-    /* top: 300px; */
     position: relative;
     float: left;
+    background-size: cover;
+    background-position: center;
     
-    /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
   }
 
   .img-block:nth-child(odd) {

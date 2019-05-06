@@ -10,8 +10,9 @@ function Scorebar(props) {
                     <a href="/">Memory Game</a>
                 </li>
                 <ScoreCount score={props.score} topScore={props.topScore} />
+                {/* //this renders the actual score into the bar */}
                 <li>
-                    Score: {props.score}  |   Top Score: {props.topScore}
+                    Score: {props.score}   ---   Top Score: {props.topScore}
                 </li>
             </ul>
         </nav>

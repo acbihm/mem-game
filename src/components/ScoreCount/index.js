@@ -8,7 +8,6 @@ class ScoreCount extends Component {
     componentDidUpdate({ score, topScore }, prevState) {
         const newState = { scoreNum: "" };
         if (score === 0 && topScore === 0) {
-            
             newState.scoreNum = "";
         } else if (score === 0 && topScore > 0) {
             newState.scoreNum = "incorrect";
@@ -25,7 +24,7 @@ class ScoreCount extends Component {
             case "correct":
                 return "GOOD, KEEP GOING!";
             case "incorrect":
-                return "WRONG";
+                return "WRONG! CLICK A COLOR TO START OVER!";
             default:
                 return "Click a color block to start!";
         }
